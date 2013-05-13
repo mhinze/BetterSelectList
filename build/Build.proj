@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition="$(Configuration) == ''">Release</Configuration>
+        <ProjectRoot>$(MSBuildProjectDirectory)\..\src</ProjectRoot>                
+    </PropertyGroup>
+       
+    
+    <Target Name="Build">
+        <MSBuild Projects="$(ProjectRoot)\BetterSelectList.sln" 
+                 Targets="Build" 
+                 Properties="Configuration=$(Configuration)" />
+    </Target>
+</Project>
