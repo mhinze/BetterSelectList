@@ -1,0 +1,14 @@
+build/
+packages/
+[Oo]bj/
+[Bb]in/
+*.user
+*.suo
+_Resharper*/
+artifacts/
+*.dtp*
+*.ncrunch*
+_NCrunch*
+TestResult.xml
+*.orig
+*.log
