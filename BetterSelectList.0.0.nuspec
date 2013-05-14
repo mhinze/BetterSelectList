@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>BetterSelectList</id>
+        <version>0.0</version>
+        <title>Better Select List</title>
+        <authors>Matt Hinze</authors>
+        <owners>Matt Hinze</owners>
+        <licenseUrl>https://raw.github.com/mhinze/BetterSelectList/master/License.txt</licenseUrl>
+        <projectUrl>https://github.com/mhinze/BetterSelectList</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Render HTML attributes with select list options.</description>
+        <summary>Render HTML attributes with select list options.</summary>
+        <tags>aspnetmvc select option html</tags>
+        <dependencies>
+            <dependency id="Microsoft.AspNet.Mvc" version="4.0.20710.0" />
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System.Web" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="src\BetterSelectList\bin\Release\BetterSelectList.dll" target="lib\net45\BetterSelectList.dll" />
+        <file src="License.txt" target="License.txt" />
+        <file src="readme.md" target="readme.md" />
+    </files>
+</package>
