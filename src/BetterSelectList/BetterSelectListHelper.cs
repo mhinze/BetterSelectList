@@ -259,9 +259,7 @@ namespace System.Web.Mvc.Html
 			if (optionLabel != null) {
 				listItemBuilder.AppendLine(ListItemToOption(new BetterSelectListItem() { Text = optionLabel, Value = String.Empty, Selected = false }));
 			}
-
-
-
+			
 			// Group the list and create optgroups
 			var groupedList = selectList.GroupBy(i => i.Group);
 
