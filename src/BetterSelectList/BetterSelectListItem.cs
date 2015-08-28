@@ -6,17 +6,22 @@ namespace BetterSelectList
     // ReSharper disable MemberCanBePrivate.Global
     public class BetterSelectListItem : SelectListItem
     {
+
+		public string Group = null;
+
         public BetterSelectListItem() { }
 
         public BetterSelectListItem(string value,
                                     string text,
                                     bool selected = false,
-                                    IDictionary<string, object> htmlAttributes = null)
+                                    IDictionary<string, object> htmlAttributes = null,
+									string group = null)
         {
             Value = value;
             Text = text;
             Selected = selected;
             HtmlAttributes = htmlAttributes;
+			Group = group;
         }
 
         public BetterSelectListItem(string value, string text, bool selected = false, object htmlAttributes = null)
