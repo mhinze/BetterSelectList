@@ -1,0 +1,62 @@
+﻿@using BetterSelectList
+@{
+    var items = new[]
+    {
+        new
+        {
+            Text = "One",
+            Value = "1",
+            Group = "Odd",
+            Selected = true
+        },
+        new
+        {
+            Text = "Two",
+            Value = "2",
+            Group = "Even",
+            Selected = false
+        },
+        new
+        {
+            Text = "Three",
+            Value = "3",
+            Group = "Odd",
+            Selected = false
+        },
+        new
+        {
+            Text = "Four",
+            Value = "4",
+            Group = "Even",
+            Selected = false
+        },
+        new
+        {
+            Text = "Five",
+            Value = "5",
+            Group = "Odd",
+            Selected = false
+        },
+        new
+        {
+            Text = "Six",
+            Value = "6",
+            Group = "Even",
+            Selected = false
+        }
+    };
+
+    var betterSelectList = items.Select(item => new BetterSelectListItem(item.Value, item.Text, item.Selected, new {data_val = item.Value}));
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BetterSelectList Demo</title>
+</head>
+<body>
+<h3>BetterSelectList</h3>
+@Html.BetterDropDownList("test", betterSelectList)
+
+</body>
+</html>

@@ -11,3 +11,4 @@ _NCrunch*
 TestResult.xml
 *.orig
 *.log
+.vs/
