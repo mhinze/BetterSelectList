@@ -7,14 +7,14 @@
             Text = "One",
             Value = "1",
             Group = "Odd",
-            Selected = true
+            Selected = false
         },
         new
         {
             Text = "Two",
             Value = "2",
             Group = "Even",
-            Selected = false
+            Selected = true
         },
         new
         {
@@ -45,8 +45,6 @@
             Selected = false
         }
     };
-
-    var betterSelectList = items.Select(item => new BetterSelectListItem(item.Value, item.Text, item.Selected, new {data_val = item.Value}));
 }
 
 <!DOCTYPE html>
@@ -56,7 +54,17 @@
 </head>
 <body>
 <h3>BetterSelectList</h3>
-@Html.BetterDropDownList("test", betterSelectList)
+@{
+    var betterSelectList = items.Select(item => new BetterSelectListItem(item.Value, item.Text, item.Selected, new { data_val = item.Value }));
+}
+@Html.BetterDropDownList("demo", betterSelectList)
+
+<h3>BetterSelectList with groups</h3>
+@{
+    var withGroups = items.Select(item => new BetterSelectListItem(item.Value, item.Text, item.Selected, new { data_val = item.Value }, item.Group));
+}
+@Html.BetterDropDownList("demo-optgroup", withGroups)
+
 
 </body>
 </html>

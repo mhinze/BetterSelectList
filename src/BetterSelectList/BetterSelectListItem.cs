@@ -24,8 +24,8 @@ namespace BetterSelectList
 			Group = group;
         }
 
-        public BetterSelectListItem(string value, string text, bool selected = false, object htmlAttributes = null)
-            : this(value, text, selected, HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes)) { }
+        public BetterSelectListItem(string value, string text, bool selected = false, object htmlAttributes = null, string group = null)
+            : this(value, text, selected, HtmlHelper.AnonymousObjectToHtmlAttributes(htmlAttributes), group) { }
 
         public IDictionary<string, object> HtmlAttributes { get; set; }
     }
