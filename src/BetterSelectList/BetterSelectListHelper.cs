@@ -306,13 +306,45 @@ namespace System.Web.Mvc.Html
                 listItemBuilder.AppendLine(ListItemToOption(new BetterSelectListItem() { Text = optionLabel, Value = String.Empty, Selected = false }));
             }
 
-            foreach (BetterSelectListItem item in selectList)
-            {
-                listItemBuilder.AppendLine(ListItemToOption(item));
-            }
 
 
-            TagBuilder tagBuilder = new TagBuilder("select")
+			// Group the list and create optgroups
+			var groupedList = selectList.GroupBy(i => i.Group);
+
+			// Iterate through groups
+			foreach (var group in groupedList) 
+			{
+
+				// Skip the optgroup generation when the group key is null (i.e. no group)
+				if (group.Key == null) 
+				{
+
+					foreach (BetterSelectListItem item in group)
+						listItemBuilder.AppendLine(ListItemToOption(item));
+
+					continue;
+
+				}
+
+				// Create an optgroup element with label
+				var optgroup = new TagBuilder("optgroup");
+				optgroup.MergeAttribute("label", group.Key);
+
+				// Append the items to the optgroup first
+				var children = new StringBuilder();
+
+				foreach (BetterSelectListItem item in group)
+					children.AppendLine(ListItemToOption(item));
+
+				optgroup.InnerHtml = children.ToString();
+
+				// Now append the whole optgroup to the list
+				listItemBuilder.AppendLine(optgroup.ToString());
+
+			}
+
+
+			TagBuilder tagBuilder = new TagBuilder("select")
             {
                 InnerHtml = listItemBuilder.ToString()
             };
